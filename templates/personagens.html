@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Personagens | The World is Yours{% endblock %}
+
+{% block content %}
+
+<section class="personagens" id="personagens">
+    <div class="container">
+
+        <p class="titulo">PERSONAGENS</p>
+
+        <h2>Personagens</h2>
+
+        <div class="row g-4">
+
+            {% for p in personagens %}
+            <div class="col-12 col-md-6">
+                <div class="card h-100 bg-dark text-white">
+                    <div class="card-body">
+
+                        <span>{{ "%02d"|format(loop.index) }}</span>
+
+                        <h3 class="card-title">{{ p.nome }}</h3>
+
+                        <p class="card-text">{{ p.descricao }}</p>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,534 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #080808;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+:root {
+    --vermelho: #d90416;
+    --cinza: #999;
+    --fundo: #080808;
+    --cinza-escuro: #151515;
+    --branco: #ffffff;
+}
+
+
+/*estilo da navbar*/
+
+.navbar {
+    min-height: 80px;
+    background-color: #080808 !important;
+    border-bottom: 1px solid #292929;
+}
+
+.navbar .container {
+    width: 90%;
+    max-width: 1100px;
+}
+
+.navbar-brand {
+    color: rgb(255, 255, 255) !important;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: var(--vermelho) !important;
+}
+
+.navbar-nav {
+    gap: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--vermelho) !important;
+}
+
+/*botao responsivo*/
+
+.navbar-toggler {
+    border-color: #444;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+/*header já com incio*/
+
+
+.inicio {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.9)),
+        #080808;
+}
+
+.inicio .container {
+    width: 90%;
+    max-width: 1100px;
+}
+
+
+/*1 texto */
+
+.inicio p:first-child {
+    color: var(--vermelho);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+/*titulo */
+
+.inicio h1 {
+    margin-top: 20px;
+
+    font-size: clamp(70px, 12vw, 140px);
+
+    line-height: 0.8;
+
+    letter-spacing: -6px;
+
+    color: #ffffff;
+}
+
+.inicio h1:hover {
+    color: var(--vermelho);
+    transition-duration: 0.3s;
+}
+
+
+
+.inicio h1 span {
+    display: block;
+
+    color: var(--vermelho);
+}
+
+.inicio h1 span:hover {
+    color: var(--branco);
+    transition-duration: 0.3s;
+}
+
+
+/*texto principal*/
+
+.texto {
+
+    max-width: 600px;
+
+    margin-top: 35px;
+
+    color: var(--branco);
+
+    font-size: 19px;
+}
+
+/*atualizacao dos containers de conteusdo */
+
+.conteudo {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.container {
+    max-width: 1100px;
+}
+
+
+/*secoes*/
+
+.titulo {
+    color: var(--vermelho);
+
+    font-size: 20px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+section h2 {
+
+    margin-top: 20px;
+
+    font-size: clamp(50px, 12vw, 120px);
+
+    line-height: 0.8;
+
+    letter-spacing: -10px;
+    color: var(--branco);
+}
+
+section h2:hover {
+    color: var(--vermelho);
+    transition: 0.3s;
+}
+
+/*parte do tony*/
+
+.tony {
+    padding: 100px 0;
+
+    background-color: #101010;
+}
+
+/*texto1*/
+.texto-tony {
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 70px;
+}
+
+.texto-tony article p {
+    margin-bottom: 20px;
+
+    color: var(--branco);
+
+    font-size: 16px;
+}
+
+.texto-tony article h4 {
+    color: var(--vermelho);
+}
+
+/*infos*/
+
+.informacoes {
+    padding: 25px;
+
+    background-color: #080808;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+}
+
+.informacoes h3 {
+    margin-bottom: 20px;
+
+    font-size: 17px;
+
+    color: #ff172a;
+}
+
+.informacoes p {
+    padding: 12px 0;
+
+    color: var(--cinza);
+
+    border-bottom: 1px solid #222;
+}
+
+.informacoes p:last-child {
+    border-bottom: none;
+    color: var(--cinza)
+}
+
+.informacoes strong {
+    color: rgb(236, 234, 234);
+}
+
+
+/*parte do desenvolvimento*/
+
+.desenvolvimento {
+    /*main (principal do tópico)*/
+    padding: 100px 0;
+
+    background-color: #101010;
+}
+
+.desenvolvimento h2 {
+    margin-top: 15px;
+
+    font-size: clamp(50px, 12vw, 90px);
+
+    line-height: 0.8;
+
+    letter-spacing: -6px;
+    color: var(--branco);
+}
+
+.desenvolvimento p:not(.titulo) {
+    max-width: 800px;
+
+    margin-top: 25px;
+
+    color: #f3f3f3;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/*cards dos personagens usando o bootstrap */
+
+.personagens {
+    padding: 100px 0;
+
+    background-color: #101010;
+}
+
+/* descobri que o bootstrap já cria o sistema
+   de colunas com row e col-md-6, mexo apenas na aparência dos cards de todos os personagens (nao mexi em um por um).*/
+
+.personagens .row {
+    margin-top: 55px;
+}
+
+.personagens .card {
+    min-height: 230px;
+
+    padding: 5px;
+
+    background-color: #080808 !important;
+
+    border: 1px solid #292929 !important;
+
+    border-radius: 5;
+
+    transition: 0.5s;
+}
+
+.personagens .card:hover {
+    border-color: var(--vermelho) !important;
+
+    transform: translateY(-5px);
+}
+
+.personagens .card-body {
+    padding: 30px;
+}
+
+.personagens .card-body span {
+    color: var(--vermelho);
+
+    font-size: 11px;
+}
+
+.personagens .card-title {
+    /*deixa o titulo visivel*/
+    margin-top: 35px;
+
+    color: rgb(109, 35, 35);
+
+    font-size: 24px;
+}
+
+.personagens .card-text {
+    margin-top: 15px;
+
+    color: var(--branco);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/*fiz o modal embaixo*/
+/*botao*/
+
+.btn.botao {
+    border-radius: 5;
+
+    background-color: #020202;
+
+    border: 2px solid #690c0c;
+}
+
+.modal-content {
+    background-color: #101010;
+
+    color: rgb(255, 255, 255);
+
+    border: 5px solid #050505;
+
+    border-radius: 5;
+}
+
+.modal-header {
+    border-bottom: 1px solid #000000;
+    background-color: #ffffff;
+}
+
+.modal-title {
+    color: rgb(104, 16, 16);
+
+    font-size: 30px;
+}
+
+
+/* estilizaçao do texto onde o modal está*/
+
+.modal-body {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.3;
+}
+
+
+/*botao de fechar o modal*/
+
+
+.modal-footer {
+    border-top: 1px solid #292929;
+}
+
+.modal .btn-secondary {
+    border-radius: 5;
+
+    background-color: #070707;
+
+    border: 1px solid #444;
+}
+
+.modal .btn-secondary:hover {
+
+    background-color: var(--vermelho);
+    border-color: var(--vermelho);
+}
+
+
+/*estilo da footer*/
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background-color: #131313;
+
+    border-top: 1px solid #222;
+}
+
+footer h3 {
+    font-size: 20px;
+    color: rgb(250, 250, 250);
+}
+
+footer h3:hover {
+    color: var(--vermelho);
+}
+
+footer a {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: rgb(134, 133, 133);
+
+    font-size: 11px;
+}
+
+footer a:hover {
+    color: #ff172a;
+}
+
+
+/*responsividade*/
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .navbar-nav {
+        gap: 5px;
+
+        margin-top: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 11px;
+    }
+
+
+    /*incio*/
+
+    .inicio h1 {
+        font-size: 19vw;
+
+        letter-spacing: -3px;
+    }
+
+    /* title*/
+    section h2 {
+        font-size: 12vw;
+    }
+
+
+    /* texto*/
+
+    .texto-tony {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    /*desenvolvimento*/
+
+    .desenvolvimento h2 {
+        font-size: 12vw;
+    }
+
+
+    /* e os card*/
+
+    .personagens .card {
+        min-height: 200px;
+    }
+}

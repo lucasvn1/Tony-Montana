@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Início | The World is Yours{% endblock %}
+
+{% block content %}
+
+<!-- inicio -->
+<div class="inicio" id="inicio">
+    <div class="container">
+
+        <p>SCARFACE</p>
+
+        <h1>
+            TONY
+            <span>MONTANA</span>
+        </h1>
+
+        <p class="texto">
+            A história de Tony Montana, um imigrante cubano que chega
+            a Miami e se envolve no mundo do crime, sendo para muitos
+            um símbolo de ambição e ascensão social, mas também de
+            tragédia e violência.
+        </p>
+
+        <!-- Botão que abre o Modal -->
+        <button type="button" class="btn btn-danger botao"
+            data-bs-toggle="modal" data-bs-target="#modalTony">
+            GOAT
+        </button>
+
+    </div>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="modalTony" tabindex="-1"
+    aria-labelledby="modalTonyLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTonyLabel">Introdução</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    O personagem chega a Miami vindo de Cuba
+                    e começa a construir sua trajetória no mundo
+                    do crime.
+                </p>
+
+                <p>
+                    No entanto, o topo trouxe paranoia, isolamento e um vício destrutivo que arruinou suas relações familiares e profissionais. Seu fim foi selado ao desobedecer a um poderoso barão boliviano para poupar a vida de crianças.
+                </p>
+
+                <p>
+                    Como punição, sua mansão foi invadida e, após uma resistência feroz e solitária, Tony foi morto pelos assassinos, caindo na piscina sob os dizeres "O Mundo é Seu".
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Fechar
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
