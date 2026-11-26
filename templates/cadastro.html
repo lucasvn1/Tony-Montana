@@ -1,12 +1,51 @@
-{% extends "base.html" %} {% block title %}Cadastro | The World is Yours{% endblock %} {% block content %}
-CADASTRO
+{% extends "base.html" %}
 
-Cadastro de fãs
-Nome 
-E-mail 
-Personagem favorito 
-{{ o }}
-Comentário 
+{% block title %}Cadastro | The World is Yours{% endblock %}
 
-Cadastrar
+{% block content %}
+
+<section class="desenvolvimento" id="cadastro">
+    <div class="container">
+
+        <p class="titulo">CADASTRO</p>
+
+        <h2>Cadastro de fãs</h2>
+
+        <form method="POST" action="{{ url_for('cadastro') }}" class="mt-5" style="max-width: 600px;">
+
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control bg-dark text-white border-secondary"
+                       id="nome" name="nome" maxlength="100" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control bg-dark text-white border-secondary"
+                       id="email" name="email" maxlength="100" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="personagem_favorito" class="form-label">Personagem favorito</label>
+                <select class="form-select bg-dark text-white border-secondary"
+                        id="personagem_favorito" name="personagem_favorito" required>
+                    {% for o in opcoes %}
+                    <option value="{{ o }}">{{ o }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="comentario" class="form-label">Comentário</label>
+                <textarea class="form-control bg-dark text-white border-secondary"
+                          id="comentario" name="comentario" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-danger">Cadastrar</button>
+
+        </form>
+
+    </div>
+</section>
+
 {% endblock %}

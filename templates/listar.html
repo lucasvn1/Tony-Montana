@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Listagem | The World is Yours{% endblock %}
+
+{% block content %}
+
+<section class="desenvolvimento" id="listar">
+    <div class="container">
+
+        <p class="titulo">LISTAGEM</p>
+
+        <h2>Fãs cadastrados</h2>
+
+        {% if request.args.get('ok') %}
+        <div class="alert alert-success mt-4" role="alert">
+            Cadastro realizado com sucesso!
+        </div>
+        {% endif %}
+
+        {% if registros %}
+        <div class="table-responsive mt-5">
+            <table class="table table-dark table-striped table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Personagem favorito</th>
+                        <th>Comentário</th>
+                        <th>Cadastrado em</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in registros %}
+                    <tr>
+                        <td>{{ r.id }}</td>
+                        <td>{{ r.nome }}</td>
+                        <td>{{ r.email }}</td>
+                        <td>{{ r.personagem_favorito }}</td>
+                        <td>{{ r.comentario }}</td>
+                        <td>{{ r.criado_em.strftime('%d/%m/%Y %H:%M') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="mt-5">Nenhum registro encontrado. <a href="{{ url_for('cadastro') }}" style="color: var(--vermelho);">Faça o primeiro cadastro</a>.</p>
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}
