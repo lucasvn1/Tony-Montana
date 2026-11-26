@@ -443,6 +443,166 @@ section h2:hover {
 }
 
 
+#cadastro h2,
+#listar h2 {
+    font-size: clamp(36px, 8vw, 72px);
+    letter-spacing: -3px;
+}
+
+
+/*cadastro*/
+
+/* caixa do formulário */
+#cadastro form {
+    padding: 35px;
+
+    background-color: #080808;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+}
+
+#cadastro .form-label {
+    color: var(--cinza);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* campos (!important porque o bootstrap usa !important em bg-dark, text-white e border-secondary) */
+#cadastro .form-control,
+#cadastro .form-select {
+    padding: 12px 14px;
+
+    background-color: var(--cinza-escuro) !important;
+    color: var(--branco) !important;
+
+    border: 1px solid #292929 !important;
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+#cadastro textarea.form-control {
+    resize: vertical;
+}
+
+/* campo selecionado */
+#cadastro .form-control:focus,
+#cadastro .form-select:focus {
+    border-color: var(--vermelho) !important;
+    box-shadow: 0 0 0 0.2rem rgba(217, 4, 22, 0.25);
+}
+
+/* seta do select em branco (a padrão é escura e some no fundo preto) */
+#cadastro .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+#cadastro .form-select option {
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+}
+
+/* botão */
+#cadastro .btn-danger {
+    width: 100%;
+    padding: 12px;
+
+    background-color: var(--vermelho);
+
+    border: 2px solid var(--vermelho);
+    border-radius: 6px;
+
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    transition: 0.3s;
+}
+
+#cadastro .btn-danger:hover {
+    background-color: transparent;
+    color: var(--vermelho);
+}
+
+
+/* listar */
+
+/* mensagem de sucesso */
+#listar .alert-success {
+    background-color: #0f1f12;
+    color: #7bd88f;
+
+    border: 1px solid #1f5a2b;
+    border-radius: 6px;
+}
+
+/* moldura da tabela */
+#listar .table-responsive {
+    border: 1px solid #292929;
+    border-radius: 10px;
+}
+
+/* cores da tabela (o bootstrap controla por variáveis) */
+#listar .table {
+    --bs-table-bg: #080808;
+    --bs-table-striped-bg: #121212;
+    --bs-table-hover-bg: #1c1c1c;
+    --bs-table-border-color: #222;
+
+    --bs-table-color: #f3f3f3;
+    --bs-table-striped-color: #f3f3f3;
+    --bs-table-hover-color: #ffffff;
+
+    min-width: 700px;
+    margin-bottom: 0;
+}
+
+#listar th,
+#listar td {
+    padding: 14px 16px;
+}
+
+/* cabeçalho */
+#listar thead th {
+    color: var(--vermelho);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    border-bottom: 2px solid var(--vermelho);
+}
+
+/* coluna do # em vermelho e comentário mais discreto */
+#listar td:first-child {
+    color: var(--vermelho);
+    font-weight: bold;
+}
+
+#listar td:nth-child(5) {
+    max-width: 300px;
+    color: var(--cinza);
+}
+
+/* mensagem de "nenhum registro" */
+#listar .container > p:not(.titulo) {
+    max-width: 100%;
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #080808;
+
+    border: 1px dashed #292929;
+    border-radius: 10px;
+}
+
+
 /*estilo da footer*/
 
 footer {
