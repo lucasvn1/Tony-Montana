@@ -24,7 +24,8 @@
                     SCARFACE - 1983
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -32,18 +33,18 @@
                     <ul class="navbar-nav ms-auto">
 
                         {% set links = [
-                        ('index', 'Início'),
-                        ('tony', 'Tony'),
-                        ('enredo', 'Enredo'),
-                        ('personagens', 'Personagens')
-                        ('cadastro', 'Cadastro'),
-                        ('listar', 'Listar')
+                            ('index', 'Início'),
+                            ('tony', 'Tony'),
+                            ('enredo', 'Enredo'),
+                            ('personagens', 'Personagens'),
+                            ('cadastro', 'Cadastro'),
+                            ('listar', 'Listar')
                         ] %}
 
                         {% for endpoint, nome in links %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.endpoint == endpoint %}active{% endif %}"
-                                href="{{ url_for(endpoint) }}">{{ nome }}</a>
+                               href="{{ url_for(endpoint) }}">{{ nome }}</a>
                         </li>
                         {% endfor %}
 
@@ -62,6 +63,7 @@
     <!-- footer (igual em todas as páginas) -->
     <footer>
         <h3>SCARFACE - 1983</h3>
+        <p>Lucas Vinicius — Atividade 4</p>
         <a href="{{ url_for('index') }}">Voltar ao início</a>
     </footer>
 
